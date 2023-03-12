@@ -1,6 +1,6 @@
 <model>
     <mount>//OPNsense/proxy</mount>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <description>
         (squid) proxy settings
     </description>
@@ -310,9 +310,15 @@
                     </check001>
                 </Constraints>
             </sslbump>
-            <sslurlonly type="BooleanField">
-                <default>0</default>
+            <sslurlonly type="OptionField">
+                <default>off</default>
                 <Required>Y</Required>
+                <OptionValues>
+                    <off>Off</off>
+                    <explicit>Explicit</explicit>
+                    <transparent>Transparent</transparent>
+                    <both>Both (transparent+explicit)</both>
+                </OptionValues>
                 <Constraints>
                     <check001>
                         <reference>sslbump.check001</reference>
